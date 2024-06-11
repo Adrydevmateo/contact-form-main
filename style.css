@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+ --Green-200-lighter: hsl(148, 38%, 91%);
+ --Green-600-medium: hsl(169, 82%, 27%);
+ --Red: hsl(0, 66%, 54%);
+ --White: hsl(0, 0%, 100%);
+ --Grey-500-medium: hsl(186, 15%, 59%);
+ --Grey-900-darker: hsl(187, 24%, 22%);
+
+ --transition: .2s ease;
+ --border-radius: .4em;
+}
+
+/* width */
+::-webkit-scrollbar {
+ width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+ background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #555;
+}
+
+html,
+button {
+ font-size: medium;
+ font-family: "Karla", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-optical-sizing: auto;
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+ margin: 0;
+ background-color: var(--Grey-500-medium);
+ padding: 1em;
+}
+
+main {
+ padding: 1em;
+ background-color: var(--White);
+ border-radius: var(--border-radius);
+}
+
+h1 {
+ margin: 0;
+ margin-bottom: .6em;
+}
+
+p {
+ margin: 0;
+}
+
+button {
+ width: 100%;
+ border: none;
+ padding: 1em 0;
+ font-weight: bold;
+ color: var(--Green-200-lighter);
+ background-color: var(--Green-600-medium);
+ border-radius: var(--border-radius);
+}
+
+#form {
+ padding: 1em;
+ display: grid;
+ gap: 1em;
+}
+
+.form-field {
+ display: grid;
+ gap: .6em;
+}
+
+.form-field input {
+ outline: none;
+ padding: 1.1em 1em;
+ border: 1px solid var(--Green-600-medium);
+ border-radius: var(--border-radius);
+ opacity: .8;
+ transition: opacity var(--transition);
+}
+
+.form-field input:focus {
+ opacity: 1;
+}
+
+.required-field-error-msg {
+ opacity: 0;
+ height: 0;
+ color: var(--Red);
+ font-weight: 600;
+ transition: opacity var(--transition), height var(--transition);
+}
+
+.submitting input:required:invalid {
+ border: 1px solid var(--Red);
+}
+
+.submitting .form-field:has(input:required:invalid) .required-field-error-msg {
+ opacity: 1;
+ height: initial;
+}
+
+@media screen and (min-width: 900) {
+
+ html,
+ button {
+  font-size: large;
+ }
+}
+
+@media screen and (min-width: 1200) {
+
+ html,
+ button {
+  font-size: larger;
+ }
+}

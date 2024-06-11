@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="attribution" content="https://www.frontendmentor.io?ref=challenge">
+ <title>Contact Form</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="main.js" defer></script>
+</head>
+
+<body>
+ <main>
+  <h1>Contact Us</h1>
+  <form id="form">
+   <div class="form-field">
+    <label for="username">First Name *</label>
+    <input type="text" name="username" id="username" required>
+    <p class="required-field-error-msg">This field is required.</p>
+   </div>
+   <div class="form-field">
+    <label for="last_name">Last Name *</label>
+    <input type="text" name="last_name" id="last_name" required>
+    <p class="required-field-error-msg">This field is required.</p>
+   </div>
+   <div class="form-field">
+    <label for="email">Email Address *</label>
+    <input type="email" name="email" id="email" required>
+    <p class="required-field-error-msg" id="email-error-msg-slot">This field is required.</p>
+   </div>
+   <div class="form-field">
+    <p class="form-field-title">Query Type *</p>
+    <div class="form-field-radio-container">
+     <input type="radio" name="query_type" id="general_enquiry" required>
+     <label for="general_enquiry">General Enquiry</label>
+    </div>
+    <div class="form-field-radio-container">
+     <input type="radio" name="query_type" id="support_request" required>
+     <label for="support_request">Support Request</label>
+    </div>
+    <p class="required-field-error-msg">Please select a query type.</p>
+   </div>
+   <div class="form-field">
+    <label for="message">Message *</label>
+    <textarea name="message" id="message" required></textarea>
+    <p class="required-field-error-msg">This field is required.</p>
+   </div>
+   <div class="consent-container">
+    <input type="checkbox" name="consent" id="consent" required>
+    <label for="consent">I consent to being contacted by the team *</label>
+    <p class="required-field-error-msg">To submit this form, please consent to being contacted.</p>
+   </div>
+   <div class="btn-submit-container">
+    <button type="button" id="btn-submit">Submit</button>
+   </div>
+  </form>
+ </main>
+</body>
+
+</html>
