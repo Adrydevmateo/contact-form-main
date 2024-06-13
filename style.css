@@ -77,6 +77,11 @@ button {
  background-color: var(--Green-600-medium);
  border-radius: var(--border-radius);
  cursor: pointer;
+ transition: background-color var(--transition);
+}
+
+button:hover {
+ background-color: var(--Grey-900-darker);
 }
 
 #form {
@@ -85,7 +90,9 @@ button {
  gap: 1em;
 }
 
-label {
+label,
+input,
+textarea {
  cursor: pointer;
 }
 
@@ -95,13 +102,26 @@ label {
 }
 
 .form-field input,
+.form-field textarea,
+.form-field-radio-container {
+ border: 1px solid var(--Grey-500-medium);
+ border-radius: var(--border-radius);
+ transition: border-color var(--transition);
+}
+
+.form-field input:hover,
+.form-field textarea:hover,
+.form-field-radio-container:hover {
+ border-color: var(--Green-600-medium);
+}
+
+.form-field input,
 .form-field textarea {
  outline: none;
  padding: 1.1em 1em;
- border: 1px solid var(--Green-600-medium);
- border-radius: var(--border-radius);
  opacity: .8;
  transition: opacity var(--transition);
+ color: var(--Green-600-medium);
 }
 
 .form-field textarea {
@@ -115,8 +135,6 @@ label {
 .form-field-radio-container {
  position: relative;
  padding: .8em;
- border: 1px solid var(--Green-600-medium);
- border-radius: var(--border-radius);
  display: flex;
  align-items: center;
  gap: .3em;
@@ -124,16 +142,13 @@ label {
 
 .form-field-radio-container svg {
  position: absolute;
- color: var(--Green-600-medium);
+ color: var(--Grey-500-medium);
  opacity: .5;
+ transition: opacity var(--transition), color var(--transition);
 }
 
 .form-field-radio-container span {
  padding-left: 2.3em;
-}
-
-.form-field-radio-container svg {
- transition: opacity var(--transition);
 }
 
 .form-field-radio-container .radio-checked {
@@ -144,6 +159,14 @@ label {
  opacity: 0;
 }
 
+.form-field-radio-container:hover,
+.form-field-radio-container:hover svg,
+.form-field-radio-container:has(input:checked),
+.form-field-radio-container:has(input:checked) .radio-checked {
+ color: var(--Green-600-medium);
+}
+
+.form-field-radio-container:has(input:checked),
 .form-field-radio-container:has(input:checked) .radio-checked {
  opacity: 1;
 }
@@ -151,6 +174,7 @@ label {
 .required-field-error-msg {
  opacity: 0;
  height: 0;
+ pointer-events: none;
  color: var(--Red);
  font-weight: 600;
  transition: opacity var(--transition), height var(--transition);
@@ -161,22 +185,32 @@ label {
 }
 
 .submitting .form-field:has(input:required:invalid) .required-field-error-msg,
+.submitting .form-field:has(textarea:required:invalid) .required-field-error-msg,
 .submitting .consent-container:has(input:required:invalid) .required-field-error-msg {
  opacity: 1;
  height: initial;
 }
 
+.submitting .form-field:has(input:required:invalid) input,
+.submitting .form-field:has(input:required:invalid) textarea {
+ color: var(--Red);
+}
+
 .consent-container label {
  display: flex;
  cursor: pointer;
+ font-weight: bold;
+ opacity: .8;
+ transition: opacity var(--transition);
 }
 
 .consent-container p {
  padding-top: .4em;
 }
 
-.consent-container:has(input:required:valid) {
- font-weight: bold;
+.consent-container label:hover,
+.consent-container:has(input:required:valid) label {
+ opacity: 1;
 }
 
 @media screen and (min-width: 900) {
