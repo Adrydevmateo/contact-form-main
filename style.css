@@ -77,11 +77,35 @@ button {
  background-color: var(--Green-600-medium);
  border-radius: var(--border-radius);
  cursor: pointer;
+ position: relative;
+ display: grid;
+ place-content: center;
  transition: background-color var(--transition);
 }
 
 button:hover {
  background-color: var(--Grey-900-darker);
+}
+
+.submitting button {
+ cursor: not-allowed;
+}
+
+button svg {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity var(--transition);
+}
+
+.submitting button span {
+ opacity: 0;
+}
+
+.submitting button svg {
+ opacity: 1;
 }
 
 #form {
@@ -180,19 +204,19 @@ textarea {
  transition: opacity var(--transition), height var(--transition);
 }
 
-.submitting input:required:invalid {
+.invalid input:required:invalid {
  border: 1px solid var(--Red);
 }
 
-.submitting .form-field:has(input:required:invalid) .required-field-error-msg,
-.submitting .form-field:has(textarea:required:invalid) .required-field-error-msg,
-.submitting .consent-container:has(input:required:invalid) .required-field-error-msg {
+.invalid .form-field:has(input:required:invalid) .required-field-error-msg,
+.invalid .form-field:has(textarea:required:invalid) .required-field-error-msg,
+.invalid .consent-container:has(input:required:invalid) .required-field-error-msg {
  opacity: 1;
  height: initial;
 }
 
-.submitting .form-field:has(input:required:invalid) input,
-.submitting .form-field:has(input:required:invalid) textarea {
+.invalid .form-field:has(input:required:invalid) input,
+.invalid .form-field:has(input:required:invalid) textarea {
  color: var(--Red);
 }
 

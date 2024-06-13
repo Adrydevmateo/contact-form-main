@@ -1,14 +1,29 @@
-const form = document.getElementById('form')
+'use strict'
+
 const btnSubmit = document.getElementById('btn-submit')
 const email_error_slot = document.getElementById('email-error-msg-slot')
 
-btnSubmit.addEventListener('click', Submit)
+btnSubmit.addEventListener('click', HandleSubmit)
 
-function Submit(e) {
+function HandleSubmit(e) {
  e.preventDefault()
 
- form.classList.add('submitting')
+ const form = document.getElementById('form')
 
+ form.classList.add('submitting')
+ const result = Submit(form)
+ if (result) {
+  form.classList.add('invalid')
+  form.classList.remove('submitting')
+ }
+
+ setTimeout(() => {
+  Notify()
+  form.classList.remove('submitting')
+ }, 3000);
+}
+
+function Submit(form) {
  const formData = new FormData(form)
 
  // Validate Consent
@@ -30,10 +45,10 @@ function Submit(e) {
  }
 
  // Submit
- form.classList.remove('submitting')
+ return 0
+}
 
- // Notify
-
+function Notify() {
  const notificationWrapper = document.createElement('div')
  notificationWrapper.id = 'notification-wrapper'
 
