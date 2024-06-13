@@ -9,7 +9,7 @@
  --Grey-900-darker: hsl(187, 24%, 22%);
 
  --transition: .2s ease-in;
- --border-radius: .4em;
+ --border-radius: .5em;
 }
 
 /* width */
@@ -198,9 +198,22 @@ textarea {
 
 .consent-container label {
  display: flex;
+ align-items: center;
  cursor: pointer;
  font-weight: bold;
+ gap: .4em;
  opacity: .8;
+ transition: opacity var(--transition);
+}
+
+.consent-container .checkbox-icon-wrapper {
+ display: grid;
+ border: 1px solid var(--Green-600-medium);
+ border-radius: .26em;
+}
+
+.consent-container .checkbox-icon-wrapper svg {
+ opacity: 0;
  transition: opacity var(--transition);
 }
 
@@ -209,7 +222,8 @@ textarea {
 }
 
 .consent-container label:hover,
-.consent-container:has(input:required:valid) label {
+.consent-container:has(input:required:valid) label,
+.consent-container:has(input:required:valid) .checkbox-icon-wrapper svg {
  opacity: 1;
 }
 
