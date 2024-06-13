@@ -121,7 +121,7 @@ textarea {
  padding: 1.1em 1em;
  opacity: .8;
  transition: opacity var(--transition);
- color: var(--Green-600-medium);
+ color: var(--Grey-900-darker);
 }
 
 .form-field textarea {
