@@ -138,6 +138,7 @@ textarea {
  display: flex;
  align-items: center;
  gap: .3em;
+ color: var(--Grey-900-darker);
 }
 
 .form-field-radio-container svg {
@@ -159,9 +160,7 @@ textarea {
  opacity: 0;
 }
 
-.form-field-radio-container:hover,
 .form-field-radio-container:hover svg,
-.form-field-radio-container:has(input:checked),
 .form-field-radio-container:has(input:checked) .radio-checked {
  color: var(--Green-600-medium);
 }
@@ -169,6 +168,7 @@ textarea {
 .form-field-radio-container:has(input:checked),
 .form-field-radio-container:has(input:checked) .radio-checked {
  opacity: 1;
+ background-color: var(--Green-200-lighter);
 }
 
 .required-field-error-msg {
