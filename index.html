@@ -31,14 +31,33 @@
    </div>
    <div class="form-field">
     <p class="form-field-title">Query Type *</p>
-    <div class="form-field-radio-container">
-     <input type="radio" name="query_type" id="general_enquiry" required>
-     <label for="general_enquiry">General Enquiry</label>
-    </div>
-    <div class="form-field-radio-container">
-     <input type="radio" name="query_type" id="support_request" required>
-     <label for="support_request">Support Request</label>
-    </div>
+    <label class="form-field-radio-container" for="general_enquiry">
+     <input type="radio" name="query_type" id="general_enquiry" required hidden>
+     <svg class="radio-unchecked" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+      <path fill="currentColor"
+       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8" />
+     </svg>
+     <svg class="radio-checked" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+      <path fill="currentColor"
+       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8" />
+      <circle cx="12" cy="12" r="5" fill="currentColor" />
+     </svg>
+     <span>General Enquiry</span>
+    </label>
+
+    <label class="form-field-radio-container" for="support_request">
+     <input type="radio" name="query_type" id="support_request" required hidden>
+     <svg class="radio-unchecked" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+      <path fill="currentColor"
+       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8" />
+     </svg>
+     <svg class="radio-checked" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+      <path fill="currentColor"
+       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8s8 3.58 8 8s-3.58 8-8 8" />
+      <circle cx="12" cy="12" r="5" fill="currentColor" />
+     </svg>
+     <span>Support Request</span>
+    </label>
     <p class="required-field-error-msg">Please select a query type.</p>
    </div>
    <div class="form-field">
@@ -47,8 +66,10 @@
     <p class="required-field-error-msg">This field is required.</p>
    </div>
    <div class="consent-container">
-    <input type="checkbox" name="consent" id="consent" required>
-    <label for="consent">I consent to being contacted by the team *</label>
+    <label for="consent">
+     <input type="checkbox" name="consent" id="consent" required>
+     <span>I consent to being contacted by the team *</span>
+    </label>
     <p class="required-field-error-msg">To submit this form, please consent to being contacted.</p>
    </div>
    <div class="btn-submit-container">
