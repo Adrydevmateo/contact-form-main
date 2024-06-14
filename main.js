@@ -11,15 +11,20 @@ function HandleSubmit(e) {
  const form = document.getElementById('form')
 
  form.classList.add('submitting')
+
  const result = Submit(form)
  if (result) {
   form.classList.add('invalid')
   form.classList.remove('submitting')
+  return 1
  }
 
+ if (form.classList.contains('invalid')) form.classList.remove('invalid')
+
  setTimeout(() => {
-  Notify()
   form.classList.remove('submitting')
+  Notify()
+  form.reset()
  }, 3000);
 }
 
