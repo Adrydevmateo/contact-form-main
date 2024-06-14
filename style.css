@@ -251,14 +251,13 @@ textarea {
  opacity: 1;
 }
 
-#notification-wrapper {
+#notification-wrapper,
+#notification-wrapper-error {
  position: fixed;
  z-index: 2;
  top: 1em;
  left: 1em;
  right: 1em;
- color: var(--White);
- background-color: var(--Grey-900-darker);
  padding: 1em;
  border-radius: var(--border-radius);
  animation-name: slideInNotification;
@@ -285,7 +284,18 @@ textarea {
  }
 }
 
-#notification-wrapper .row-1 {
+#notification-wrapper {
+ color: var(--White);
+ background-color: var(--Grey-900-darker);
+}
+
+#notification-wrapper-error {
+ color: var(--White);
+ background-color: var(--Red);
+}
+
+#notification-wrapper .row-1,
+#notification-wrapper-error .row-1 {
  display: flex;
  align-items: center;
  gap: .2em;
