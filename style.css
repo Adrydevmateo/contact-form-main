@@ -254,10 +254,9 @@ textarea {
 #notification-wrapper,
 #notification-wrapper-error {
  position: fixed;
+ justify-self: center;
  z-index: 2;
  top: 1em;
- left: 1em;
- right: 1em;
  padding: 1em;
  border-radius: var(--border-radius);
  animation-name: slideInNotification;
@@ -302,18 +301,70 @@ textarea {
  margin-bottom: .5em;
 }
 
-@media screen and (min-width: 900) {
+@media screen and (min-width: 900px) {
 
  html,
+ input,
+ textarea,
  button {
   font-size: large;
  }
 }
 
-@media screen and (min-width: 1200) {
+@media screen and (min-width: 1200px) {
 
  html,
  button {
   font-size: larger;
  }
+
+ main {
+  padding: 1.6em 1.8em;
+  min-width: 34em;
+ }
+
+ #form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ }
+
+ #email-field,
+ #query-type-field,
+ #message-field,
+ #consent-field,
+ #btn-submit-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 3;
+ }
+
+ #query-type-field {
+  grid-row-start: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ }
+
+ #query-type-field .radio-1 {
+  grid-row-start: 2;
+ }
+
+ #query-type-field .radio-2 {
+  grid-row-start: 2;
+ }
+
+ #query-type-field .required-field-error-msg {
+  grid-row-start: 3;
+ }
+
+ #message-field {
+  grid-row-start: 4;
+ }
+
+ #consent-field {
+  grid-row-start: 5;
+ }
+
+ #btn-submit-wrapper {
+  grid-row-start: 6;
+ }
+
 }

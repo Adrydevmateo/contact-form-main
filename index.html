@@ -24,14 +24,14 @@
     <input type="text" name="last_name" id="last_name" required>
     <p class="required-field-error-msg">This field is required.</p>
    </div>
-   <div class="form-field">
+   <div class="form-field" id="email-field">
     <label for="email">Email Address *</label>
     <input type="email" name="email" id="email" required>
     <p class="required-field-error-msg" id="email-error-msg-slot">This field is required.</p>
    </div>
-   <div class="form-field">
+   <div class="form-field" id="query-type-field">
     <p class="form-field-title">Query Type *</p>
-    <label class="form-field-radio-container" for="general_enquiry">
+    <label class="form-field-radio-container radio-1" for="general_enquiry">
      <input type="radio" name="query_type" id="general_enquiry" required hidden>
      <svg class="radio-unchecked" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
       <path fill="currentColor"
@@ -45,7 +45,7 @@
      <span>General Enquiry</span>
     </label>
 
-    <label class="form-field-radio-container" for="support_request">
+    <label class="form-field-radio-container radio-2" for="support_request">
      <input type="radio" name="query_type" id="support_request" required hidden>
      <svg class="radio-unchecked" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
       <path fill="currentColor"
@@ -60,12 +60,12 @@
     </label>
     <p class="required-field-error-msg">Please select a query type.</p>
    </div>
-   <div class="form-field">
+   <div class="form-field" id="message-field">
     <label for="message">Message *</label>
     <textarea name="message" id="message" required></textarea>
     <p class="required-field-error-msg">This field is required.</p>
    </div>
-   <div class="consent-container">
+   <div class="consent-container" id="consent-field">
     <label for="consent">
      <input type="checkbox" name="consent" id="consent" required hidden>
      <div class="checkbox-icon-wrapper">
@@ -78,7 +78,7 @@
     </label>
     <p class="required-field-error-msg">To submit this form, please consent to being contacted.</p>
    </div>
-   <div class="btn-submit-container">
+   <div class="btn-submit-container" id="btn-submit-wrapper">
     <button type="button" id="btn-submit">
      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
       <circle cx="4" cy="12" r="1.5" fill="currentColor">
